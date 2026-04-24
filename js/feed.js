@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
 
-  // Shuffle array logic for non-repeating playlist
   function shuffleArray(array) {
     let arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
   }
@@ -37,10 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const post = document.createElement("div");
       post.className = "feed-post";
 
-      // Re-shuffle the playlist if we run out of videos
       if (currentVideoIndex >= shuffledVideos.length) {
-          shuffledVideos = shuffleArray(videoFiles);
-          currentVideoIndex = 0;
+        shuffledVideos = shuffleArray(videoFiles);
+        currentVideoIndex = 0;
       }
 
       const randomVideo = shuffledVideos[currentVideoIndex];
@@ -154,17 +152,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
-  // Hamburger menu logic
   const menuIcon = document.getElementById("menu-icon");
   const menuItems = document.querySelector(".menu-items");
-  if(menuIcon && menuItems) {
-      menuIcon.addEventListener("click", () => {
-        menuItems.classList.toggle("active");
-        if (menuItems.classList.contains("active")) {
-          menuIcon.classList.replace("bx-menu", "bx-x");
-        } else {
-          menuIcon.classList.replace("bx-x", "bx-menu");
-        }
-      });
+  if (menuIcon && menuItems) {
+    menuIcon.addEventListener("click", () => {
+      menuItems.classList.toggle("active");
+      if (menuItems.classList.contains("active")) {
+        menuIcon.classList.replace("bx-menu", "bx-x");
+      } else {
+        menuIcon.classList.replace("bx-x", "bx-menu");
+      }
+    });
   }
 });
