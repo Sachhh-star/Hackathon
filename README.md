@@ -27,4 +27,4 @@ Proudly developed by the Web Development Team:
 - **Beam**
 - **Marouf**
 - **Luoxi**
-- **Daan**
+- **Daan A**
